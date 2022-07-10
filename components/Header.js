@@ -6,7 +6,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import useRouter from "next/router";
 import { useSelector } from "react-redux";
 import { selectItems } from "../src/slices/basketSlice";
 function Header() {
@@ -68,7 +68,7 @@ function Header() {
         </p>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
-        <p className="link">Today's Deals</p>
+        <p className="link">Today&apos;s Deals</p>
         <p className="link hidden lg:inline-flex ">Electronics</p>
         <p className="link hidden lg:inline-flex ">Food & Grocery</p>
         <p className="link hidden lg:inline-flex ">Prime</p>
