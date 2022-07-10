@@ -1,14 +1,13 @@
 import { CheckCircleIcon } from "@heroicons/react/outline";
 import Head from "next/head";
-import { useRouter } from "next/router";
+
 import React from "react";
 import Header from "../components/Header";
-function success() {
-  const router = useRouter();
+function Success() {
   return (
     <div className="bg-gray-100 h-screen ">
       <Head>
-        <title>Amazon/success</title>
+        <title>Amazon/Success</title>
       </Head>
       <Header />
 
@@ -25,13 +24,11 @@ function success() {
             your items has shopped , if you would like to check the status of
             your orders pleasse press the link below
           </p>
-          <button onClick={router.push("/orders")} className="button mt-8">
-            Go to my orders
-          </button>
+          <button className="button mt-8">Go to my orders</button>
         </div>
       </main>
     </div>
   );
 }
 
-export default success;
+export default Success;
