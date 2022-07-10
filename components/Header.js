@@ -6,7 +6,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
-import useRouter from "next/router";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { selectItems } from "../src/slices/basketSlice";
 function Header() {
@@ -48,7 +48,7 @@ function Header() {
             <p className="font-extrabold md:text-sm ">& Orders</p>
           </div>
           <div
-            onClick={() => router.push("/chekout")}
+            onClick={router.push("/chekout")}
             className="relative link flex items-center"
           >
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
