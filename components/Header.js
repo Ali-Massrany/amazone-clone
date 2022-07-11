@@ -46,7 +46,7 @@ function Header() {
           >
             <p>Returns</p>
             <p
-              onClick={() => router.push("/chekout")}
+              // onClick={() => router.push("/chekout")}
               className="font-extrabold md:text-sm "
             >
               & Orders

@@ -3,12 +3,8 @@ import Header from "../components/Header";
 import { useSession, getSession } from "next-auth/react";
 import moment from "moment";
 import Order from "../components/Order";
-// import * as admin from "firebase-admin";
+import * as admin from "firebase-admin";
 import Head from "next/head";
-// import serviceAccount from "../permissions.json";
-import { getFirestore } from "firebase-admin/firestore";
-// import app from "../firebase";
-// import { initializeApp, applicationDefault, cert } from "firebase-admin/app";
 function Orders({ orders }) {
   const { data: session } = useSession();
   return (
@@ -49,23 +45,23 @@ function Orders({ orders }) {
 export default Orders;
 export async function getServerSideProps(context) {
   const stripe = require("stripe")(process.env.stripe_SECRET_KEY);
-  // const {
-  //   initializeApp,
-  //   applicationDefault,
-  //   cert,
-  // } = require("firebase-admin/app");
-  // const {
-  //   getFirestore,
-  //   Timestamp,
-  //   FieldValue,
-  // } = require("firebase-admin/firestore");
-  // const serviceAccount = require("../permissions.json");
-  // const app = !admin.apps.length
-  //   ? admin.initializeApp({
-  //       credential: admin.credential.cert(serviceAccount),
-  //     })
-  //   : admin.app();
-  const db = getFirestore();
+  const {
+    initializeApp,
+    applicationDefault,
+    cert,
+  } = require("firebase-admin/app");
+  const {
+    getFirestore,
+    Timestamp,
+    FieldValue,
+  } = require("firebase-admin/firestore");
+  const serviceAccount = require("../permissions.json");
+  const app = !admin.apps.length
+    ? admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+      })
+    : admin.app();
+  const db = getFirestore(app);
   // Get the users loged in credentials
 
   const session = await getSession(context);

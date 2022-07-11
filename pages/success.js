@@ -24,7 +24,7 @@ function Success() {
             your items has shopped , if you would like to check the status of
             your orders pleasse press the link below
           </p>
-          <button className="button mt-8">Go to my orders</button>
+          {/* <button className="button mt-8">Go to my orders</button> */}
         </div>
       </main>
     </div>
