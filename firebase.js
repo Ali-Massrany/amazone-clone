@@ -1,13 +1,13 @@
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  apiKey: "AIzaSyCLCrA0gB69ZHI2NXVpXQOlCpaikwGtwNM",
+  authDomain: "fir-c0ae5.firebaseapp.com",
   databaseURL: "https://fir-c0ae5-default-rtdb.firebaseio.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  projectId: "fir-c0ae5",
+  storageBucket: "fir-c0ae5.appspot.com",
+  messagingSenderId: "484642405726",
+  appId: "1:484642405726:web:68c6463708bd8dfa4a23cf",
 };
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);

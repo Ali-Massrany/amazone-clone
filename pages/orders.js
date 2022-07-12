@@ -5,6 +5,8 @@ import moment from "moment";
 import Order from "../components/Order";
 import * as admin from "firebase-admin";
 import Head from "next/head";
+import Stripe from "stripe";
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 function Orders({ orders }) {
   const { data: session } = useSession();
   return (
@@ -44,7 +46,7 @@ function Orders({ orders }) {
 
 export default Orders;
 export async function getServerSideProps(context) {
-  const stripe = require("stripe")(process.env.stripe_SECRET_KEY);
+  // const stripe = require("stripe")(process.env.stripe_SECRET_KEY);
   const {
     initializeApp,
     applicationDefault,
