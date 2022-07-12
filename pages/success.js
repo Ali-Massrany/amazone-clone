@@ -1,5 +1,6 @@
 import { CheckCircleIcon } from "@heroicons/react/outline";
 import Head from "next/head";
+import Link from "next/link";
 
 import React from "react";
 import Header from "../components/Header";
@@ -25,6 +26,10 @@ function Success() {
             your orders pleasse press the link below
           </p>
           {/* <button className="button mt-8">Go to my orders</button> */}
+
+          <Link href={"/orders"}>
+            <div className="button mt-8 text-center">Go to my orders</div>
+          </Link>
         </div>
       </main>
     </div>
